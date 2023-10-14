@@ -1,0 +1,7 @@
+<div class="container">
+    <div class="otp-container">
+      <p>Please Enter the OTP that is sent to your registered mobile number</p>
+      <otp [setting]="settings" (onValueChange)="onInputChange($event)"></otp>
+      <button class="btn-submit" (click)="submitOtp()">Submit OTP</button>
+    </div>
+  </div>

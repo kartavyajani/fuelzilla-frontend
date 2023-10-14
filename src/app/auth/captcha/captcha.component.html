@@ -1,0 +1,30 @@
+<form [formGroup]="form">
+    <div class="col-md-12">
+        <div class="{{ config.cssClass}}">
+
+            <div class="row">
+                <div class="col-md-10">
+                    <canvas id="captcahCanvas" class="captcahCanvas" width="370" height="80"></canvas>
+                </div>
+                <div class="col-md-2 captcha-btn">
+                    <div class="row pt-1">
+                        <i class="fa fa-2x fa-volume-up" (click)="playCaptcha()" aria-hidden="true"></i>
+                    </div>
+                    <div class="row pt-1">
+                        <i class="fa fa-2x fa-refresh" (click)="createCaptcha()" aria-hidden="true"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <mat-form-field class="col-md-12" appearance="outline" class="custom-form-field">
+                    <input matInput placeholder="Enter Captcha" class="input" formControlName="captcha" id="captcha" [maxLength]="config['length']">
+                    <mat-error *ngIf="isFieldInvalid('captcha')">
+                        Please enter captcha
+                    </mat-error>
+                </mat-form-field>
+            </div>
+
+        </div>
+    </div>
+</form>

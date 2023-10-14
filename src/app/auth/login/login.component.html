@@ -1,0 +1,75 @@
+<div class="container-fluid">
+    <div class="login-container">
+      <div class="row justify-content-center">
+        <div class="col-md-5">
+          <div class="card shadow-lg" style="border-radius: 1rem;">
+            <div class="card-body px-5 py-3 text-center">
+  
+              <!-- <div class="card-title text-center border-bottom">
+                <img src="assets\images\cropped-logo_new-1.png.webp" height="100%" width="100%" alt=""
+                  class="d-none d-sm-inline img-responsive">
+              </div> -->
+              <div class="row">
+                <div class="col-12 mt-3">
+                  <p class="text-center fs-4 login-text">Welcome to Fuelzilla </p>
+                  
+                  <form [formGroup]="masterForm" id="login-form">
+                    <div class="row mt-2">
+                      <div class="col col-md-12" class="custom-form-field">
+                        <mat-form-field appearance="outline">
+                          <input matInput placeholder="Username" class="input" formControlName="userName" name="userName"
+                            id="userName" required minlength="1">
+                          <mat-error *ngIf="isFieldInvalid('userName')">
+                            Please enter username
+                          </mat-error>
+                        </mat-form-field>
+                      </div>
+                    </div>
+                    <div class="row mt-1">
+                      <div class="col col-md-12" class="custom-form-field">
+                        <mat-form-field appearance="outline">
+                          <input matInput placeholder="Password" type="password" formControlName="password"
+                            name="password" id="password" autocomplete="off" required>
+                          <mat-error *ngIf="isFieldInvalid('password')">
+                            Please enter password
+                          </mat-error>
+                        </mat-form-field>
+                      </div>
+  
+                    </div>
+                    <div class="row mt-1">
+                        <div class="col col-md-12" class="custom-form-field">
+                          <mat-form-field appearance="outline">
+                            <input matInput placeholder="ClientID" class="input" formControlName="clientid"
+                              name="clientID" id="clientid" autocomplete="off" required>
+                            <mat-error *ngIf="isFieldInvalid('clientid')">
+                              Please enter Client ID
+                            </mat-error>
+                          </mat-form-field>
+                        </div>
+    
+                      </div>
+                    
+                    <div class="row btn-container">
+                      <app-captcha [config]="captchaConfig" [form]="masterForm" (captchaCode)="setCaptchaCode($event)"></app-captcha>
+                    </div>
+                    <mat-error>
+                    <div *ngIf="invalidCaptchaMessage" class="error-message">{{ invalidCaptchaMessage }}</div>
+                    </mat-error>
+                 
+                    <div class="row mx-3 my-2 btn-container">
+                      <div class="col col-md-12">
+                        <button class="btn-brand-green" [disabled]="!masterForm.valid" (click)="submit()" type="submit" id="loginButton">Login</button>
+                      </div>
+                
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <ngx-loading [show]="loading"></ngx-loading> -->
+  </div>
