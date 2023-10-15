@@ -28,6 +28,7 @@ import { PagesComponent } from './pages/pages.component';
 import { MediaComponent } from './media/media.component';
 import { SettingsComponent } from './settings/settings.component';
 import { SublevelMenuComponent } from './auth/sidenav/sublevel-menu.component';
+import { HeaderComponent } from './auth/header/header.component';
 
 
 // import { MatErrorModule } from '@angular/material/error';
@@ -50,7 +51,8 @@ import { SublevelMenuComponent } from './auth/sidenav/sublevel-menu.component';
     SettingsComponent,
     SublevelMenuComponent,
 
-    MenuPanelComponent
+    MenuPanelComponent,
+     HeaderComponent
   ],
   imports: [
     BrowserModule,

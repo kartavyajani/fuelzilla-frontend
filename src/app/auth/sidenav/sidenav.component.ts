@@ -32,8 +32,10 @@ export class SidenavComponent implements OnInit {
   @Output() onToggleSideNav: EventEmitter<SideNavToggle> = new EventEmitter();
   collapsed = false;
   screenWidth = 0;
-  navData = navbarData;
+  navData: INavbarData[] = navbarData;
   multiple: boolean = false;
+  isOpening=false;
+  navDataNew=navbarData;
 
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
@@ -48,6 +50,23 @@ export class SidenavComponent implements OnInit {
 
   ngOnInit(): void {
       this.screenWidth = window.innerWidth;
+  }
+  expandItem(data: INavbarData): void {
+    console.log("expand data called",data);
+    
+    if (data.items && data.items.length > 0) {
+      data.expanded = true;
+      this.isOpening=true;
+
+    }
+  }
+
+  collapseItem(data: INavbarData): void {
+    console.log("collapse data called",data);
+    
+    if (data.items && data.items.length > 0) {
+      data.expanded = false;
+    }
   }
 
   toggleCollapse(): void {

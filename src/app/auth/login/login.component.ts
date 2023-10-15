@@ -102,15 +102,15 @@ export class LoginComponent implements OnInit {
 
     if (this.masterForm.value.userName != null && this.masterForm.value.password != null && this.masterForm.value.clientid != null) {
 
-      if (this.captcha !== this.masterForm.get('captcha')?.value) {
-        // this.notifyService.showError(this.commonMessages.INVALID_CAPTCHA, '');
-        this.captchaComponent.createCaptcha()
-        this.masterForm.get('captcha')?.setValue('')
-        this.masterForm.get('captcha')?.markAsUntouched()
-        console.log("invalid captcha");
-        this.invalidCaptchaMessage = "Invalid CAPTCHA"; 
-        return
-      } 
+      // if (this.captcha !== this.masterForm.get('captcha')?.value) {
+      //   // this.notifyService.showError(this.commonMessages.INVALID_CAPTCHA, '');
+      //   this.captchaComponent.createCaptcha()
+      //   this.masterForm.get('captcha')?.setValue('')
+      //   this.masterForm.get('captcha')?.markAsUntouched()
+      //   console.log("invalid captcha");
+      //   this.invalidCaptchaMessage = "Invalid CAPTCHA"; 
+      //   return
+      // } 
 
       this.loading = true;
 

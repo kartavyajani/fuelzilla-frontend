@@ -1,0 +1,168 @@
+
+
+<!-- <div [ngClass]= "isDarkTheme?'dark-theme':'light-theme'"> -->
+    <div class="form-body">
+        <mat-toolbar>
+          <mat-toolbar-row class="siteheader1" style="border-bottom: 2px solid #e6e6e6;">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-2 col-4  justify-content-center align-self-center">
+                  <button mat-icon-button>
+                    <mat-icon (click)="sidenav.toggle();" style="color: #0095da;">menu</mat-icon>
+                  </button>
+                  <!-- </div> -->
+                  <!-- <button mat-button style="color: #039bab;" class="btn-primary fillbg btn-login btn btn-fundfinder fillbg" (click)="logout()">Logout</button> -->
+                  <!-- <div class="col-md-2" style="text-align: left;"> -->
+                
+                
+                
+                  <!-- <img src="assets\images\SBI.jpg" height="60px" width="80%" alt="" class="d-none d-sm-inline img-responsive" > -->
+                  <img src="assets\images\sbi-logo.jpg" height="60px" width="100%" alt="" class="d-none d-sm-inline img-responsive">
+                  <img src="assets\images\sbi-mf-mob-logo.png" height="50px" alt="" class="d-inline d-sm-none img-responsive">
+                
+                  <!-- <a>
+                              <img src="assets\images\sbi-logo.jpg" width="140" height="60" alt="">
+                            </a> -->
+                </div>
+                <!-- <div class="col-md-6 col-1"></div> -->
+            
+                <!-- <div class="col-md-4 col-5"> -->
+                  <!-- <button mat-mini-fab (click)="goBack()">
+                    <mat-icon aria-hidden="false" aria-label="Example home icon" (click)="goBack()">arrow_back</mat-icon>
+                  </button> -->
+                  <!-- <span class="example-spacer"></span> -->
+      
+      
+                  <div class="col-md-6 offset-md-4 col-8 justify-content-center align-self-center">
+                    <div class="row ">
+                      <div class="col-md-4 col-2 gx-0" style="text-align: right; border-right: 1px solid #e6e6e6; padding-right: 10px;">
+                  
+                        <span>
+                          <button mat-icon-button [matMenuTriggerFor]="menuNotification"  class="example-icon favorite-icon" aria-label="Example icon-button with heart icon"
+                            style="height: 100%;">
+                            <mat-icon style="color: #0095da;" matBadge="3" >notifications</mat-icon>
+                          </button>
+      
+                          <mat-menu #menuNotification="matMenu">
+                              <div class="topnav-dropdown-header">
+                                <span class="notification-title">Notifications</span>
+                                <!-- <a href="javascript:void(0)" class="clear-noti"> Clear All </a> -->
+                                </div>
+      
+                                <div class="noti-content">
+                                  <ul class="notification-list">
+                                  <li class="notification-message">
+                                  <a href="activities.html">
+                                  <div class="media d-flex">
+                                  <span class="avatar flex-shrink-0">
+                                    <img alt="" src="https://crms-html.dreamguystech.com/template/assets/img/profiles/avatar-02.jpg">
+                                  </span>
+                                  <div class="media-body flex-grow-1">
+                                  <p class="noti-details"><span class="noti-title">John Doe</span> added new task <span class="noti-title">Patient appointment booking</span></p>
+                                  <p class="noti-time"><span class="notification-time">4 mins ago</span></p>
+                                  </div>
+                                  </div>
+                                  </a>
+                                  </li>
+                                  <li class="notification-message">
+                                  <a href="activities.html">
+                                  <div class="media d-flex">
+                                  <span class="avatar flex-shrink-0">
+                                    <img alt="" src="https://crms-html.dreamguystech.com/template/assets/img/profiles/avatar-02.jpg">
+                                  </span>
+                                  <div class="media-body flex-grow-1">
+                                  <p class="noti-details"><span class="noti-title">Tarah Shropshire</span> changed the task name <span class="noti-title">Appointment booking with payment gateway</span></p>
+                                  <p class="noti-time"><span class="notification-time">6 mins ago</span></p>
+                                  </div>
+                                  </div>
+                                  </a>
+                                  </li>
+                                  <li class="notification-message">
+                                  <a href="activities.html">
+                                  <div class="media d-flex">
+                                  <span class="avatar flex-shrink-0">
+                                    <img alt="" src="https://crms-html.dreamguystech.com/template/assets/img/profiles/avatar-02.jpg">
+                                  </span>
+                                  <div class="media-body flex-grow-1">
+                                  <p class="noti-details"><span class="noti-title">Misty Tison</span> added <span class="noti-title">Domenic Houston</span> and <span class="noti-title">Claire Mapes</span> to project <span class="noti-title">Doctor available module</span></p>
+                                  <p class="noti-time"><span class="notification-time">8 mins ago</span></p>
+                                  </div>
+                                  </div>
+                                  </a>
+                                  </li>
+                                  </ul>
+                                  </div>
+      
+                          </mat-menu>
+                        </span>
+                        <!-- <span>
+                          <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon"
+                            style="height: 100%;">
+                            <mat-icon style="color: #0095da;">email</mat-icon>
+                          </button>
+                        </span> -->
+                  
+      
+                      </div>
+                      <div class="col-md-3 col-3 gx-3">
+                        <!-- <ng-select (change)="changeRole($event)" aria-placeholder="Select Role" [items]="roles" bindValue="role_id" bindLabel="role_name" [(ngModel)]="selectedRole"
+                        [clearable]="false"> -->
+                      <!-- </ng-select> -->
+                      </div>
+        
+                      <div class="col-md-4 col-4 gx-3 justify-content-center align-self-center"
+                        style="text-align: right; font-size: small;">
+                        <div style="max-width: 100%">
+                          <span>Welcome, </span>
+                          <span>{{user_name}}</span>
+                        </div>
+                        <!-- data-bs-toggle="tooltip" data-bs-placement="bottom" title="Last login: 11th Apr 2022, 06:00 PM" -->
+                        <div style="max-width: 100%;
+                            /* overflow-x: hidden; */
+                            white-space: nowrap;
+                            /* width: 50px; */
+                            overflow: hidden;
+                            text-overflow: ellipsis;"
+                          matTooltipPosition="below">
+                          <span>Last login: </span>
+                          <span>{{lastLoginAmPm}}</span>
+                        </div>
+        
+                      </div>
+        
+                      <div class="col-md-1 col-3 gx-3 justify-content-center align-self-center" style="text-align: center;">
+                        <span style="padding-left: 10px;">
+                          <!-- <button mat-mini-fab [matMenuTriggerFor]="menuHero" class="person-button" ng-init dense>
+                            <mat-icon class="person" style="height: 100%;">person</mat-icon>
+                          </button> -->
+      
+                          <mat-icon mat-mini-fab style="float-right:100%" [matMenuTriggerFor]="menuHero" class="maticon-small-size ">person</mat-icon>
+        
+                          <mat-menu #menuHero="matMenu">
+                       
+                            <button (click)=" changePassword()" mat-menu-item>
+                              <mat-icon>person</mat-icon>
+                              <span>Change Password</span>
+                            </button>
+                            <button (click)="logOut()" mat-menu-item>
+                              <mat-icon>exit_to_app</mat-icon>
+                              <span>Logout</span>
+                            </button>
+        
+                          </mat-menu>
+                        </span>
+        
+                      </div>
+                    </div>
+        
+                  </div>
+                  
+      
+                <!-- </div> -->
+              </div>
+            </div>
+          </mat-toolbar-row>
+        </mat-toolbar>
+        <!-- "mat-drawer-container .mat-drawer-backdrop.mat-drawer-shown 
+        mat-sidenav-container mat-drawer-transition click="logOut()" -->
+      

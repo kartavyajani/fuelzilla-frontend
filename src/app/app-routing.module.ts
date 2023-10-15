@@ -13,7 +13,7 @@ const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
   {path:'login',component:LoginComponent},
   {path:'otp',component:OtpModuleComponent},
-  {path:'menu',component:MenuPanelComponent},
+
   {path: 'dashboard', component: DashboardComponent},
   {
     path: 'products',

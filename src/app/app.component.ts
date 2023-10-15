@@ -20,14 +20,19 @@ export class AppComponent {
   constructor(private router: Router, private activatedRoute: ActivatedRoute) {
     this.router.events.subscribe((event:any) => {
       if (event instanceof NavigationEnd) {
+
         //const currentRoute = event.url;
         // Add conditions to hide the navbar for specific routes
         let currentRoute = this.activatedRoute.root;
         while (currentRoute.firstChild) {
           currentRoute = currentRoute.firstChild;
         }
+        console.log("this,showsidenav--->",this.showSideNav);
+        
         this.showSideNav = currentRoute.routeConfig?.path !== 'login' && currentRoute.routeConfig?.path !== 'otp';
         // this.showSideNav = !['/login', '/otp',''].includes(currentRoute);
+        console.log("this. hsow sidenva ---after---<>>>",this.showSideNav);
+        
       }
     });
   }

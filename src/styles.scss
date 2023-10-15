@@ -884,6 +884,10 @@ body {
     position: relative;
     font-family: 'Roboto', sans-serif;
 }
+.head-trimmed{
+    width: calc(100% - 18.5625rem);
+    margin-left: 18.5625rem;
+  }
 
 .card {
     display: flex;
@@ -904,3 +908,36 @@ body {
         padding: 1rem 1.5rem; 
     }
 }
+
+
+
+@import "~bootstrap/scss/bootstrap";
+
+.navbar-expand {
+  @each $breakpoint in map-keys($grid-breakpoints) {
+    $next: breakpoint-next($breakpoint, $grid-breakpoints);
+    $infix: breakpoint-infix($next, $grid-breakpoints);
+
+    &#{$infix} {
+      @include media-breakpoint-down($breakpoint) {
+        .sidenav {
+          position: absolute;
+          top: 100%;
+          height: calc(100vh - 100%) !important;
+          width: 100%;
+          left: 0%;
+          transition: left 0.35s;
+          padding: 2rem;
+          background-color: inherit;
+        }
+
+        .sidenav:not(.show) {
+          left: -100%;
+        }
+      }
+    }
+  }
+}
+
+
+

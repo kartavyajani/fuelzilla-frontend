@@ -199,3 +199,16 @@
     scrollbar-width: thin;
     scrollbar-color: #556268 transparent;
 }
+.sidenav-submenu {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%; /* Position submenu to the right of the menu item */
+    background-color: #fff; /* Add styles for submenu appearance (background color, padding, etc.) */
+    padding: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .sidenav-nav-link:hover .sidenav-submenu {
+    display: block;
+  }
