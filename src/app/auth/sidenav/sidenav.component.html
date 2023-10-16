@@ -13,7 +13,19 @@
                     *ngIf="data.items && data.items.length > 0"
                     [ngClass]="getActiveClass(data)"
                 >
-                    <i class="sidenav-link-icon" [class]="data.icon "(mouseenter)="expandItem(data)" (mouseleave)="collapseItem(data)"></i>
+                    <i class="sidenav-link-icon" [class]="data.icon" 
+                    ></i>
+                    <span *ngIf="data.items &&  data.items.length > 0">
+                        <button mat-raised-button color="primary" [matMenuTriggerFor]="menu.childMenu">
+                          aaa{{data.label}}
+                          <mat-icon>expand_more</mat-icon>
+                        </button>
+                        <app-mat-menu #menu [items]="data.items"></app-mat-menu>
+                      </span>
+
+
+
+                    <!-- <app-mat-menu #menu [items]="data.items" (mouseenter)="expandItem(data)" (mouseleave)="collapseItem(data)"></app-mat-menu> -->
                     <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">
                        
                         {{data.label}}
@@ -32,7 +44,7 @@
                     (click)="shrinkItems(data)"
                 
                     > 
-                    <i class="sidenav-link-icon" [class]="data.icon" (mouseenter)="expandItem(data)" (mouseleave)="collapseItem(data)"></i>
+                    <i class="sidenav-link-icon" [class]="data.icon"></i>
                     <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">
                     
                         {{data.label}}

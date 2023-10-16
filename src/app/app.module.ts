@@ -11,6 +11,7 @@ import { MatInputModule } from '@angular/material/input';
 import { CaptchaComponent } from './auth/captcha/captcha.component';
 import { AngularOtpLibModule } from 'angular-otp-box';
 import { OtpModuleComponent } from './auth/otp-module/otp-module.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { MenuPanelComponent } from './auth/menu-panel/menu-panel.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -29,6 +30,7 @@ import { MediaComponent } from './media/media.component';
 import { SettingsComponent } from './settings/settings.component';
 import { SublevelMenuComponent } from './auth/sidenav/sublevel-menu.component';
 import { HeaderComponent } from './auth/header/header.component';
+import { MatMenuComponent } from './auth/mat-menu/mat-menu.component';
 
 
 // import { MatErrorModule } from '@angular/material/error';
@@ -52,10 +54,12 @@ import { HeaderComponent } from './auth/header/header.component';
     SublevelMenuComponent,
 
     MenuPanelComponent,
-     HeaderComponent
+     HeaderComponent,
+     MatMenuComponent
   ],
   imports: [
     BrowserModule,
+    MatDialogModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatFormFieldModule,
@@ -67,6 +71,7 @@ import { HeaderComponent } from './auth/header/header.component';
   MatSidenavModule,
   MatExpansionModule,
   MatListModule,
+  
 
 
   // MatErrorModule,

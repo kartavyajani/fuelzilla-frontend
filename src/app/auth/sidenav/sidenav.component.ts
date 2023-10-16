@@ -1,8 +1,10 @@
 import { animate, keyframes, style, transition, trigger } from '@angular/animations';
-import { Component, Output, EventEmitter, OnInit, HostListener } from '@angular/core';
+import { Component, Output, EventEmitter, OnInit, HostListener, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { fadeInOut, INavbarData } from './helper';
 import { navbarData } from './nav-data';
+import { MatMenuComponent } from '../mat-menu/mat-menu.component';
+import { DialogService } from '../dialog.service';
 
 interface SideNavToggle {
   screenWidth: number;
@@ -30,12 +32,14 @@ interface SideNavToggle {
 export class SidenavComponent implements OnInit {
 
   @Output() onToggleSideNav: EventEmitter<SideNavToggle> = new EventEmitter();
+ 
   collapsed = false;
   screenWidth = 0;
   navData: INavbarData[] = navbarData;
   multiple: boolean = false;
   isOpening=false;
   navDataNew=navbarData;
+  @ViewChild(MatMenuComponent) matMenu!: MatMenuComponent;
 
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
@@ -46,20 +50,32 @@ export class SidenavComponent implements OnInit {
     }
   }
 
-  constructor(public router: Router) {}
+  constructor(public router: Router,private dialogService: DialogService) {}
 
   ngOnInit(): void {
       this.screenWidth = window.innerWidth;
   }
-  expandItem(data: INavbarData): void {
-    console.log("expand data called",data);
-    
-    if (data.items && data.items.length > 0) {
-      data.expanded = true;
-      this.isOpening=true;
-
-    }
+  ngAfterViewInit() {
+    // ngAfterViewInit is called after the view is initialized
+    this.matMenu; // Here, you should be able to access matMenu without it being undefined
   }
+  // expandItem(data: INavbarData): void {
+  //   console.log("expand data called", data);
+  //   if (data.items && data.items.length > 0) {
+  //     data.expanded = true;
+  //     this.isOpening = true;
+  //     if (this.matMenu) {
+  //       this.matMenu.openMenu();
+  //     }
+  //   }
+  // }
+  
+  callMatmenu(data: INavbarData) {
+    console.log("call mat xdata", data);
+    // this.expandItem(data); 
+    this.dialogService.openDialog(data);// Call the expandItem function with the same data
+  }
+  
 
   collapseItem(data: INavbarData): void {
     console.log("collapse data called",data);
@@ -80,6 +96,8 @@ export class SidenavComponent implements OnInit {
   }
 
   handleClick(item: INavbarData): void {
+    console.log("item clicked",item);
+    
     this.shrinkItems(item);
     item.expanded = !item.expanded
   }
