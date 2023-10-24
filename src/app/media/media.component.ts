@@ -75,6 +75,7 @@ export class MediaComponent implements OnInit {
       },
       enableAutoResize: true,
       enableCellNavigation: true,
+      forceFitColumns: true ,
       showCustomFooter: true, // display some metrics in the bottom custom footer
       customFooterOptions: {
         // optionally display some text on the left footer container
@@ -82,6 +83,7 @@ export class MediaComponent implements OnInit {
         hideTotalItemCount: true,
         hideLastUpdateTimestamp: true
       },
+      
 
       // you customize all formatter at once certain options through "formatterOptions" in the Grid Options
       // or independently through the column definition "params", the option names are the same

@@ -945,4 +945,24 @@ body {
 }
 
 
+#demo-container {
+  width: 100%; /* Set the container's width to 100% */
+  max-width: 100%; /* Set a max-width if needed */
+}
+
+/* Adjust column widths for smaller screens */
+@media (max-width: 768px) {
+  .slick-cell {
+    padding: 5px 10px; /* Adjust cell padding for smaller screens */
+  }
+}
+
+/* Further adjust column widths for very small screens */
+@media (max-width: 480px) {
+  .slick-cell {
+    padding: 5px; /* Further adjust cell padding for very small screens */
+  }
+}
+
+
 
