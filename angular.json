@@ -29,11 +29,16 @@
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css" ,
+              "node_modules/@slickgrid-universal/common/dist/styles/css/slickgrid-theme-bootstrap.css",
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
              
               "src/styles.scss"
             ],
             "scripts": [
-              "node_modules/jquery/dist/jquery.min.js"
+              "node_modules/jquery/dist/jquery.js",
+              "node_modules/bootstrap/dist/js/bootstrap.js",
+              "node_modules/jquery-ui-dist/jquery-ui.min.js",
+              "node_modules/slickgrid/lib/jquery.event.drag-2.3.0.js"      
             ]
           },
           "configurations": {

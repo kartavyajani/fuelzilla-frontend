@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { SideNavService } from '../side-nav.service';
 
 @Component({
   selector: 'app-header',
@@ -8,9 +9,12 @@ import { Component, Input, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
   @Input() collapsed = false;
   @Input() screenWidth = 0;
-  constructor() { }
+  constructor(private sideNavService: SideNavService) { }
 
   ngOnInit(): void {
+  }
+  toggleSideNav() {
+    this.sideNavService.toggleCollapse(!this.collapsed);
   }
   getHeadClass(): string {
     let styleClass = '';

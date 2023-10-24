@@ -5,6 +5,7 @@ import { fadeInOut, INavbarData } from './helper';
 import { navbarData } from './nav-data';
 import { MatMenuComponent } from '../mat-menu/mat-menu.component';
 import { DialogService } from '../dialog.service';
+import { SideNavService } from '../side-nav.service';
 
 interface SideNavToggle {
   screenWidth: number;
@@ -50,7 +51,12 @@ export class SidenavComponent implements OnInit {
     }
   }
 
-  constructor(public router: Router,private dialogService: DialogService) {}
+  constructor(public router: Router,private dialogService: DialogService,private sideNavService: SideNavService) {
+    this.sideNavService.collapsed$.subscribe((collapsed) => {
+      this.collapsed = collapsed;
+      this.onToggleSideNav.emit({collapsed: this.collapsed, screenWidth: this.screenWidth});
+    });
+  }
 
   ngOnInit(): void {
       this.screenWidth = window.innerWidth;

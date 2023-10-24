@@ -31,6 +31,7 @@ import { SettingsComponent } from './settings/settings.component';
 import { SublevelMenuComponent } from './auth/sidenav/sublevel-menu.component';
 import { HeaderComponent } from './auth/header/header.component';
 import { MatMenuComponent } from './auth/mat-menu/mat-menu.component';
+import { AngularSlickgridModule } from 'angular-slickgrid';
 
 
 // import { MatErrorModule } from '@angular/material/error';
@@ -71,6 +72,7 @@ import { MatMenuComponent } from './auth/mat-menu/mat-menu.component';
   MatSidenavModule,
   MatExpansionModule,
   MatListModule,
+  AngularSlickgridModule.forRoot() ,
   
 
 

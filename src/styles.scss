@@ -872,6 +872,11 @@
 //     margin-top: 10px!important;
 //   }
   /* You can add global styles to this file, and also import other style files */
+  @import "~@angular/cdk/overlay-prebuilt.css";
+  @import '~bootstrap/scss/bootstrap';
+  $cell-odd-background-color: lightyellow;
+$row-mouse-hover-color: lightgreen;
+@import '@slickgrid-universal/common/dist/styles/sass/slickgrid-theme-bootstrap.scss';
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
 
 * {
